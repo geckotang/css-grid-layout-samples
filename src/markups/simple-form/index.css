@@ -1,0 +1,17 @@
+form {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: [label] 150px [input] 1fr;
+}
+
+form > label {
+  grid-column: label;
+}
+
+form > input {
+  grid-column: input;
+}
+
+form > button[type="submit"] {
+  grid-column: 1 / -1;
+}

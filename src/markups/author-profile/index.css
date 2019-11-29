@@ -1,0 +1,29 @@
+.Author {
+  display: grid;
+  grid-template:
+    "img name" auto
+    "img title" auto
+    /100px 1fr
+  ;
+  gap: 0 10px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #f0f1f1;
+}
+
+.Author_Img {
+  grid-area: img;
+  border-radius: 100%;
+  background-color: #ccc;
+}
+
+.Author_Name {
+  grid-area: name;
+  align-self: end;
+}
+
+.Author_Title {
+  grid-area: title;
+  align-self: start;
+  font-size: 0.8em;
+}

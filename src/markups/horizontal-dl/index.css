@@ -1,0 +1,17 @@
+dl {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: [key] minmax(100px, min-content) [value] 1fr;
+}
+
+dt {
+  grid-column: key;
+  border: 1px solid #ccc;
+  white-space: nowrap;
+}
+
+dd {
+  grid-column: value;
+  margin-left: 0;
+  border: 1px solid #ccc;
+}
