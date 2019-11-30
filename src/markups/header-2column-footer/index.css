@@ -1,0 +1,34 @@
+main {
+  display: grid;
+  grid-template:
+    "head head"
+    "nav  contents"
+    "foot foot"
+    / minmax(auto, 300px) minmax(300px, 1fr)
+  ;
+  gap: 20px;
+  width: 100%;
+}
+main > header {
+  grid-area: head;
+}
+main > nav {
+  grid-area: nav;
+}
+main > article {
+  grid-area: contents;
+}
+main > footer {
+  grid-area: foot;
+}
+
+/* 装飾 */
+main > header,
+main > nav,
+main > article,
+main > footer {
+  padding: 10px;
+  background-color: #ccc;
+  border-radius: 10px;
+  text-align: center;
+}
