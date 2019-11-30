@@ -6,24 +6,41 @@ pagination:
   alias: markup
 permalink: /markups/{{ markup.slug | slug }}/index.html
 renderData:
-  title: "{{ markup.slug }}"
+  title: "{{ markup.readme.attributes.name }}"
 ---
-<h2>{{markup.slug}}</h2>
+<h2>{{ markup.readme.attributes.name }}</h2>
 
-<h3>DEMO</h3>
-<iframe srcdoc="{{ markup.html }}<style>{{ markup.css }}</style>"></iframe>
+<div class="MarkupDetail">
+  <div class="MarkupDetail_Demo">
+    <iframe srcdoc="{{ markup.html }}<style>{{ markup.css }}</style>"></iframe>
+  </div>
 
-<h3>HTML</h3>
-<pre><code class="html">{{ markup.html }}</code></pre>
-<p>
-  <a href="https://github.com/geckotang/css-grid-layout-samples/edit/master/src/markups/{{markup.slug}}/index.html">このHTMLへ修正リクエストをする</a>
-</p>
+  <div class="MarkupDetail_Readme">
+  {{  markup.readme.body | markdown | safe }}
+  </div>
 
-<h3>CSS</h3>
-<pre><code class="css">{{ markup.css }}</code></pre>
-<p>
-  <a href="https://github.com/geckotang/css-grid-layout-samples/edit/master/src/markups/{{markup.slug}}/index.css">このCSSへ修正リクエストをする</a>
-</p>
+  <div class="MarkupDetail_Html">
+    <h3>HTML</h3>
+    <div class="MarkupDetail_CodeArea">
+      <pre><code class="html">{{ markup.html }}</code></pre>
+    </div>
+    <p>
+      <a href="https://github.com/geckotang/css-grid-layout-samples/edit/master/src/markups/{{markup.slug}}/index.html">このHTMLへ修正リクエストをする</a>
+    </p>
+  </div>
+
+  <div class="MarkupDetail_Css">
+    <h3>CSS</h3>
+    <div class="MarkupDetail_CodeArea">
+      <pre><code class="css">{{ markup.css }}</code></pre>
+    </div>
+    <p>
+      <a href="https://github.com/geckotang/css-grid-layout-samples/edit/master/src/markups/{{markup.slug}}/index.css">このCSSへ修正リクエストをする</a>
+    </p>
+  </div>
+
+</div>
+
 
 <hr>
 
@@ -41,6 +58,53 @@ iframe[srcdoc] {
   width: 100%;
   height: 300px;
   border: 1px solid #ccc;
+}
+
+.MarkupDetail {
+  display: grid;
+  gap: 30px;
+  grid-template:
+    "demo html" auto
+    "readme css" auto
+    / 1fr minmax(300px, 1fr)
+  ;
+}
+@media screen and (max-width: 750px) {
+  .MarkupDetail {
+    gap: 30px;
+    grid-template:
+      "demo" auto
+      "readme" auto
+      "html" auto
+      "css" auto
+      / minmax(300px, 1fr)
+    ;
+  }
+}
+.MarkupDetail_Demo {
+  grid-area: demo;
+}
+.MarkupDetail_Html {
+  grid-area: html;
+  width: 100%;
+}
+.MarkupDetail_Html h3 {
+  margin-top: 0;
+}
+.MarkupDetail_Css {
+  grid-area: css;
+  width: 100%;
+}
+.MarkupDetail_Css h3 {
+  margin-top: 0;
+}
+.MarkupDetail_Readme {
+  grid-area: readme;
+  background-color: #f0f1f1;
+  padding: 30px;
+}
+.MarkupDetail_Readme :first-child {
+  margin-top: 0;
 }
 </style>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/github.min.css">
