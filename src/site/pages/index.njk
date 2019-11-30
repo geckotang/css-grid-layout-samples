@@ -6,7 +6,7 @@ permalink: /index.html
 <ul class="markup-list">
   {% for markup in markups %}
   <li>
-    <h2><a href="/markups/{{markup.slug}}/">{{markup.slug}}</a></h2>
+    <h2><a href="/markups/{{markup.slug}}/">{{markup.readme.attributes.name}}</a></h2>
     <iframe srcdoc="{{ markup.html }}<style>{{ markup.css }}</style>"></iframe>
   </li>
   {% endfor %}

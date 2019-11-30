@@ -1,5 +1,7 @@
 const fs = require("fs");
 const path = require("path");
+const fm = require('front-matter')
+
 const markupsDir = './src/markups/'
 
 const displayFiles = dir => {
@@ -16,8 +18,12 @@ module.exports = async function() {
       const filePath = `${markupDir}/${name}`;
       const fileType = path.parse(filePath).ext.replace('.', '');
       const data = fs.readFileSync(path.resolve(filePath)).toString();
+      if (fileType === 'md') {
+        result['readme'] = fm(data);
+      } else {
+        result[fileType] = data;
+      }
       result['slug'] = dir;
-      result[fileType] = data;
       return result
     }, {});
     return markupFiles;

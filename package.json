@@ -12,6 +12,7 @@
   "author": "Geckotang <sakamaki@pxgrid.com> (https://github.com/geckotang)",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.9.0"
+    "@11ty/eleventy": "^0.9.0",
+    "front-matter": "^3.0.2"
   }
 }
