@@ -28,5 +28,5 @@ module.exports = async function() {
     }, {});
     return markupFiles;
   });
-  return markups;
+  return markups.sort((a, b) => b.readme.attributes.publishDate - a.readme.attributes.publishDate);
 };
