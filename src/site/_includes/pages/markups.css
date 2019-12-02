@@ -1,0 +1,40 @@
+.Markups {
+  display: grid;
+  gap: 30px;
+  grid-template:
+    "demo html" auto
+    "readme css" auto
+    / 1fr minmax(300px, 1fr)
+  ;
+}
+@media screen and (max-width: 750px) {
+  .Markups {
+    gap: 30px;
+    grid-template:
+      "demo" auto
+      "readme" auto
+      "html" auto
+      "css" auto
+      / minmax(300px, 1fr)
+    ;
+  }
+}
+.Markups_Demo {
+  grid-area: demo;
+}
+.Markups_Html {
+  grid-area: html;
+  width: 100%;
+}
+.Markups_Css {
+  grid-area: css;
+  width: 100%;
+}
+.Markups_Readme {
+  grid-area: readme;
+  background-color: #f0f1f1;
+  padding: 30px;
+}
+.Markups_Readme :first-child {
+  margin-top: 0;
+}

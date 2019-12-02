@@ -1,0 +1,38 @@
+.CodeBlock {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.CodeBlock_Lang {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 5px 20px;
+  font-size: 12px;
+  background-color: #e6e6e6;
+}
+
+.CodeBlock_CodeArea {
+  flex: 1 1 auto;
+  background-color: #f8f8f8;
+}
+
+.CodeBlock_CodeArea > pre {
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.CodeBlock_CodeArea pre > code {
+  padding: 5px 10px;
+}
+
+.CodeBlock_Request {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 5px 20px;
+  text-align: end;
+  font-size: 14px;
+  background-color: #e6e6e6;
+}
