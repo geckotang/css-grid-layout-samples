@@ -38,7 +38,14 @@
 .Site_Footer {
   grid-column: full;
   grid-row: footer;
-  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
   background-color: #3f51b5;
+  color: #fff;
+}
+
+.Site_FooterIcon {
   color: #fff;
 }
