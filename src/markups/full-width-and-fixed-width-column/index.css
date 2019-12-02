@@ -1,0 +1,33 @@
+.Content {
+  display: grid;
+  grid-template-columns:
+    [full-start]
+    minmax(20px, 1fr)
+    [main-start] minmax(0, 400px) [main-end]
+    minmax(20px, 1fr)
+    [full-end];
+}
+
+.Content > * {
+  grid-column: main;
+}
+
+.Content > .-Full {
+  grid-column: full;
+}
+
+/* 装飾 */
+body {
+  margin: 0;
+}
+
+.Content_Box {
+  padding: 10px;
+  background-color: #f0f1f1;
+  text-align: center;
+}
+
+.Content_Box.-Full {
+  background-color: #ccc;
+  color: #111;
+}

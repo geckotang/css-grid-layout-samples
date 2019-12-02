@@ -1,0 +1,19 @@
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+  gap: 20px;
+}
+
+/* 装飾 */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #ccc;
+}
