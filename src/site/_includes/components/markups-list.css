@@ -1,0 +1,23 @@
+.MarkupsList {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.MarkupsList li {
+  margin: 0;
+}
+.MarkupsList h2 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+.MarkupsList iframe[srcdoc] {
+  box-sizing: border-box;
+  max-width: 500px;
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+}

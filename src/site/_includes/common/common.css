@@ -1,0 +1,29 @@
+html {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  height: 100%;
+}
+
+:root {
+  --base-content-side-gap: 20px;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+code,
+pre {
+  font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+}
+
+code:not(.hljs) {
+  padding: 3px 5px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+}

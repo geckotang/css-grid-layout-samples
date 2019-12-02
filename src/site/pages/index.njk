@@ -1,38 +1,19 @@
 ---
 layout: base.njk
 permalink: /index.html
+css: /css/index.css
 ---
 
-<ul class="markup-list">
+<h2>このサイトは？</h2>
+<p>CSS Gridを使ったレイアウト例を紹介するサイトです。サイトの大枠の部分はもちろん、細かい部分でもCSS Gridを使うことができます。</p>
+
+<ul class="MarkupsList">
   {% for markup in markups %}
   <li>
     <h2><a href="/markups/{{markup.slug}}/">{{markup.readme.attributes.name}}</a></h2>
-    <iframe srcdoc="{{ markup.html }}<style>{{ markup.css }}</style>"></iframe>
+    <div class="Demo">
+      <iframe class="Demo_View" srcdoc="{{ markup.html }}<style>{{ markup.css }}</style>"></iframe>
+    </div>
   </li>
   {% endfor %}
 </ul>
-
-<style>
-.markup-list {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.markup-list li {
-  margin: 0;
-}
-.markup-list h2 {
-  font-size: 100%;
-  font-weight: normal;
-}
-iframe[srcdoc] {
-  box-sizing: border-box;
-  max-width: 500px;
-  width: 100%;
-  height: 300px;
-  border: 1px solid #ccc;
-}
-</style>

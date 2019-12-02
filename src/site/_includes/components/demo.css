@@ -1,0 +1,10 @@
+.Demo {
+  display: block;
+}
+
+.Demo_View {
+  box-sizing: border-box;
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+}

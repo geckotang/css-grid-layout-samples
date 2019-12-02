@@ -4,14 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ renderData.title or title or metadata.title }}{% if renderData.title or title %} | {{ metadata.title}}{% endif %}</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="/css/common.css">
+  {% if css%}
+  <link rel="stylesheet" href="{{ css }}">
+  {% endif %}
   <style>
+  {{ localstyle | safe }}
   </style>
 </head>
 <body>
 
-<h1>CSS Gridを使ったレイアウト例</h1>
-
-{{ content | safe }}
+<div class="Site">
+  <header class="Site_Header">
+    <h1><a href="/">CSS Gridを使ったレイアウト例</a></h1>
+  </header>
+  <main class="Site_Content">
+    {{ content | safe }}
+  </main>
+  <footer class="Site_Footer">
+  </footer>
+</div>
 
 </body>
 </html>
