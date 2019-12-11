@@ -1,0 +1,21 @@
+form {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(min-content, 150px) 1fr;
+}
+
+form > label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+form > button[type="submit"] {
+  grid-column: 1 / -1;
+}
+
+@supports not (grid-template-columns: subgrid) {
+  form > label {
+    display: contents;
+  }
+}
