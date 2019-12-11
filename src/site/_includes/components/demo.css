@@ -10,3 +10,8 @@
   border: 1px solid #ccc;
   resize: both;
 }
+
+.Demo.-large .Demo_View {
+  max-width: 1280px;
+  height: 500px;
+}

@@ -2,9 +2,9 @@
   display: grid;
   gap: 30px;
   grid-template:
-    "demo html" auto
-    "readme css" auto
-    / 1fr minmax(300px, 1fr)
+    "demo demo demo" auto
+    "readme html css" auto
+    / 1fr minmax(300px, 1fr) minmax(300px, 1fr)
   ;
 }
 @media screen and (max-width: 750px) {
