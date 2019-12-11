@@ -1,3 +1,4 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require('markdown-it');
 const markdownItOptions = {
   html: true,
@@ -6,6 +7,8 @@ const markdownItOptions = {
 };
 
 module.exports = function(config) {
+
+  config.addPlugin(pluginRss);
 
   config.addFilter('markdown', function(value) {
     const md = markdownIt(markdownItOptions);
