@@ -15,6 +15,10 @@ module.exports = function(config) {
     return md.render(value);
   });
 
+  config.addFilter('atomDate', function(value) {
+    return ( new Date(value) ).toUTCString();
+  });
+
   return {
     dir: {
       input: 'src/site',

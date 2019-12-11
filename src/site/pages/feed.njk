@@ -12,13 +12,13 @@ permalink: /feed.xml
     <managingEditor>macky1207@gmail.com (GeckoTang)</managingEditor>
     <title>CSS Gridを使ったレイアウト例</title>
     <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-    <atom:link href="https://css-grid-layout-samples.netlify.com/feed/" rel="self"/>
+    <atom:link href="https://css-grid-layout-samples.netlify.com/feed.xml" rel="self"/>
     {%- for markup in markups %}
       {% set absoluteMarkupUrl %}{{ markup.slug | url | absoluteUrl('https://css-grid-layout-samples.netlify.com/markups/') }}{% endset %}
       <item>
         <description><![CDATA[{{ markup.readme.body }}]]></description>
         <link>{{ absoluteMarkupUrl }}</link>
-        <pubDate>{{ markup.readme.attributes.publishDate | rssDate }}</pubDate>
+        <pubDate>{{ markup.readme.attributes.publishDate | atomDate }}</pubDate>
         <title><![CDATA[{{ markup.readme.attributes.name }}]]></title>
       </item>
     {%- endfor %}
