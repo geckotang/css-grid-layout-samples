@@ -1,0 +1,39 @@
+/* 高さを100%にする */
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+/* レイアウト指定 */
+main {
+  display: grid;
+  grid-template:
+    "head head" auto
+    "nav  contents" 1fr
+    / minmax(auto, 300px) minmax(300px, 1fr)
+  ;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+main > header {
+  grid-area: head;
+}
+main > nav {
+  grid-area: nav;
+}
+main > article {
+  grid-area: contents;
+}
+
+/* 装飾 */
+main > header,
+main > nav,
+main > article {
+  padding: 10px;
+  background-color: #ccc;
+  border-radius: 10px;
+  text-align: center;
+}
